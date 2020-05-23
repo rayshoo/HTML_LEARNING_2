@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<template>
+  [td 속성]
+  headers : 관련된 하나 이상의 다른 머리글 칸 id 속성 값
+  주의사항! > td의 headers 는 th 에 연결 해야함
+  필수사항은 아니고 시각적으로 구분하기 위해 사용
+
+  colspan : 확장하려는(병합) 열의 수 // 기본값 1
+  rowspan : 확장하려는(병합) 행의 수 // 기본값 1
+</template>
+<body>
+  <table>
+    <tr>
+      <th rowspan="2" id="th-data">데이터</th>
+      <th headers="th-data" id="th-type">타입</th>
+      <td headers="th-type">알파벳</td>
+      <td headers="th-type">숫자</td>
+    </tr>
+    <!-- type과 value는 데이터에 종속되있으므로 headers 에 데이터의 id 연결 -->
+    <tr>
+      <th headers="th-data" id="th-value">값</th>
+      <td headers="th-value">A</td>
+      <td headers="th-value">7</td>
+    </tr>
+  </table>
+</body>
+</html>

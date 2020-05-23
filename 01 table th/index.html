@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+      table {
+        /* table 초기화!! */
+        border-collapse : collapse;
+      }
+      td {
+        border : 1px solid red;
+        padding : 10px;
+      }
+      th{
+        border : 1px solid red;
+        padding : 10px;
+        background-color : lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <template>
+      [th 속성]
+      abbr : 열에 대한 간단한 설명
+      headers : 관련된 하나 이상의 다른 머리글 칸 id 속성 값
+      필수사항은 아니고 시각적으로 구분하기 위해 사용
+
+      colspan : 확장하려는(병합) 열의 수
+      rowspan : 확장하려는(병합) 행의 수
+      scope : 자신이 누구의 '머리글 칸'인지 명시 - col : 자신의 열 / colgroup : 모든 열
+                                            / row : 자신의 행 / rowgroup : 모든 행
+                                            // 기본값 : auto
+    </template>
+    <table>
+      <tr>
+        <th colspan="2" id="th-data">데이터</th>
+      </tr>
+      <!-- type과 value는 데이터에 종속되있으므로 headers 에 데이터의 id 연결 -->
+      <tr>
+        <th abbr="Type" scope="col" headers="th-data">타입</th>
+        <th abbr="Value" scope="col" headers="th-data">값</th>
+      </tr>
+      <tr>
+        <td>알파벳</td>
+        <td>A</td>
+      </tr>
+      <tr>
+        <td>숫자</td>
+        <td>7</td>
+      </tr>
+    </table>
+    <hr />
+    <table>
+      <tr>
+        <th rowspan="2" id="th-data">데이터</th>
+        <th headers="th-data">타입</th>
+        <td>알파벳</td>
+        <td>숫자</td>
+      </tr>
+      <!-- type과 value는 데이터에 종속되있으므로 headers 에 데이터의 id 연결 -->
+      <tr>
+        <th headers="th-data">값</th>
+        <td>A</td>
+        <td>7</td>
+      </tr>
+    </table>
+    
+    <script src="" async defer></script>
+  </body>
+</html>
