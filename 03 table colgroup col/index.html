@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      /* table 초기화!! */
+      border-collapse : collapse;
+    }
+    td {
+      border : 1px solid red;
+      padding : 10px;
+    }
+    th{
+      border : 1px solid red;
+      padding : 10px;
+    }
+  </style>
+</head>
+<body>
+  <template>
+     colgroup, col
+     표의 열들을 공통적으로 정의하는 컬럼(col)과 그의 집합(colgroup)
+     속성 span(연속되는 열 수 ) - 값 : 숫자 / 기본값 : 1
+
+    colgroup{dispay:table-column-group;}
+    col{display table-colummn;}
+  </template>
+  <table>
+    <caption>데이터 타입과 값</caption>
+    <tr>
+      <th style="background-color : tomato;"></th>
+      <th>타입</th>
+      <th>값</th>
+    </tr>
+    <tr>
+      <th style="background-color : tomato;">1</th>
+      <td>알파벳</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th style="background-color : tomato;">2</th>
+      <td>숫자</td>
+      <td>7</td>
+    </tr>
+  </table>
+
+  <table>
+    <caption>데이터 타입과 값</caption>
+    <colgroup>
+      <col style="background-color : tomato" span="2"><!-- 여기서부터 span 값만큼 적용 -->
+      <col style="background-color : yellowgreen;">
+    </colgroup>
+    <tr>
+      <th></th>
+      <th>타입</th>
+      <th>값</th>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>알파벳</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>숫자</td>
+      <td>7</td>
+    </tr>
+  </table>
+</body>
+</html>

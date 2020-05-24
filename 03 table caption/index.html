@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      /* table 초기화!! */
+      border-collapse : collapse;
+    }
+    td {
+      border : 1px solid red;
+      padding : 10px;
+    }
+    th{
+      border : 1px solid red;
+      padding : 10px;
+      background-color : lightgray;
+    }
+  </style>
+</head>
+<body>
+  <template>
+     <caption>
+       표의 제목을 설정
+       열리는 table 태그 바로 다음에 작성해야 함
+       table 당 하나의 caption 만 사용 가능
+       display : table-caption;
+  </template>
+</body>
+  <table>
+    <caption>데이터 타입과 값</caption>
+    <tr>
+      <th rowspan="2" id="th-data">데이터</th>
+      <th headers="th-data" id="th-type">타입</th>
+      <td headers="th-type">알파벳</td>
+      <td headers="th-type">숫자</td>
+    </tr>
+    <!-- type과 value는 데이터에 종속되있으므로 headers 에 데이터의 id 연결 -->
+    <tr>
+      <th headers="th-data" id="th-value">값</th>
+      <td headers="th-value">A</td>
+      <td headers="th-value">7</td>
+    </tr>
+  </table>
+</html>
