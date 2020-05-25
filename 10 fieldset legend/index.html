@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<template>
+  옵션 option optgroup 의 선택 메뉴 select 혹은 자동완성 datalist 을 제공
+  ////////////////////////////////////////////
+  [select 속성]
+  autocomplete
+  disabled
+  form
+  multiple : 다중 선택 여부 / Bool
+  name : 선택 메뉴의 이름
+  size : 한번에 볼 수 있는 행의 개수 / 숫자(Number) / 기본값 0 (1과 같음)
+  ////////////////////////////////////////////
+  [optgroup 속성]
+  label : (필수)옵션 그룹의 이름
+  disabled : 옵션 그룹을 비활성화 / Bool
+  ////////////////////////////////////////////
+  [option 속성]
+  disabled : 옵션을 비활성화
+  label : 표시될 옵션의 제목 / 생략되면 포함된 텍스트를 표시
+  selected : 옵션이 선택되었음을 표시 / Bool
+  value : 양식으로 제출될 값 / 생략되면 포함된 텍스트를 값으로 사용
+  ////////////////////////////////////////////
+  [datalist]
+  input 에 미리 정의된 옵션을 지정하여 자동완성(autocomplete) 기능을 제공하는데 사용
+  input의 list 속성 바인딩
+  option 을 포함하여 정의된 옵션을 지정
+
+
+</template>
+<body>
+  <select>
+    <optgroup label="Coffee">
+      <option>Americano</option>
+      <option>Caffe Mocha</option>
+      <option label="Cappuccino" value="Cappuccino" />
+    </optgroup>
+    <optgroup label="Latte">
+      <option>Caffe Latte</option>
+      <option>Vanilla Latte</option>
+    </optgroup>
+    <optgroup label="Smoothie">
+      <option>Strawberry</option>
+      <option>Banana</option>
+      <option>Mango</option>
+    </optgroup>
+  </select>
+
+  <input type="text" list="fruits">
+  <datalist id="fruits">
+    <option>Apple</option>
+    <option>Orange</option>
+    <option>Banana</option>
+    <option>Mango</option>
+    <option>Pineapple</option>
+  </datalist>
+</body>
+</html>

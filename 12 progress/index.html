@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<template>
+  작업의 완료 진행률을 표시
+  //////////////////////////////
+  [속성]
+  max : 작업의 총량 / 숫자(Number)
+  value : 작업의 진행량 / 숫자(Number) / max 속성을 생략할 경우 0 ~ 1 사이의 숫자여야 함
+  //////////////////////////////
+  display : inline-block;
+</template>
+<body>
+  <progress value="70" max="100">70 %</progress>
+  <progress value="0.7">70 %</progress>
+  <progress id="progress"  value="0"></progress>
+
+  <script>
+    const progress = document.querySelector('#progress');
+    const interval = setInterval(function(){
+      progress.value += 0.1;
+      if(progress.value >= 100) clearInterval(interval);
+    }, 1000);
+  </script>
+</body>
+</html>
